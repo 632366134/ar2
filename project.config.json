@@ -37,7 +37,8 @@
         "disableUseStrict": false,
         "useCompilerPlugins": false,
         "condition": true,
-        "ignoreUploadUnusedFiles": true
+        "ignoreUploadUnusedFiles": true,
+        "skylineRenderEnable": false
     },
     "compileType": "miniprogram",
     "editorSetting": {

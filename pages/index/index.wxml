@@ -6,7 +6,7 @@
   </view>
   <scroll-view enhanced="true" bounces="true" enable-flex="{{true}}" class="scroll-view" scroll-x="{{true}}">
     <view data-item="{{item}}" bindtap="gopriview" class="scroll-item" wx:for="{{list}}" wx:key="id">
-      <image src="https://ar-p2.obs.cn-east-3.myhuaweicloud.com/{{item.bookCoverObsPath +item.bookCoverObsName}}" class="scrollImage"></image>
+      <image mode="aspectFill" src="https://arp3.arsnowslide.com/{{item.bookCoverObsPath +item.bookCoverObsName}}" class="scrollImage"></image>
       <text class="text">{{item.projectName}}</text>
     </view>
   </scroll-view>
@@ -21,12 +21,12 @@
   <view class="collect" bindtap="gopriview" wx:else data-item="{{collect}}">
     <image class="image" src="/images/index/logobg.png"></image>
     <view class="addCollect">
-      <image class="collectImage" src="{{collectUrl}}"></image>
+      <image mode="aspectFill" class="collectImage" src="{{collectUrl}}"></image>
       <text class="text">{{collect.projectName}}</text>
     </view>
-    <view capture-catch:touchstart="goColllect" class="resetImg">
+    <!-- <view capture-catch:touchstart="goColllect" class="resetImg">
       <image class="image" src="/images/index/reset.png"></image>
-    </view>
+    </view> -->
   </view>
   <view class="compList">
 
@@ -35,51 +35,23 @@
       企业榜单
     </view>
     <view class="compListMain">
-      <!-- <view wx:if="{{compList.length !=0}}" class="mainLeft" bindtap="gopriview" data-item="{{compList[0]}}">
-                <image class="imageStyle" src="https://ar-p2.obs.cn-east-3.myhuaweicloud.com/{{compList[0].bookCoverObsPath + compList[0].bookCoverObsName}}"></image>
-                <text>{{compList[0].projectName}}</text>
-            </view>
-            <view wx:else class="mainLeft">
-                <image mode='heightFix' class="mainLeftImage2" src="/images/index/bestcomp.png"></image>
-            </view>
-            <view class="mainRight">
-                <view wx:if="{{compList.length >=2}}" class="mainRight2" bindtap="gopriview" data-item="{{compList[1]}}">
-                    <image class="imageStyle" src="https://ar-p2.obs.cn-east-3.myhuaweicloud.com/{{compList[1].bookCoverObsPath + compList[1].bookCoverObsName}}"></image>
-                    <text> {{compList[1].projectName}}</text>
-                </view>
-                <view wx:else class="mainRight2">
-                    <image mode='heightFix' class="mainRightImage2" src="/images/index/bestcomp.png"></image>
-                </view>
-                <view wx:if="{{compList.length >=3}}" class="mainRight2" bindtap="gopriview" data-item="{{compList[2]}}">
-                    <image class="imageStyle" src="https://ar-p2.obs.cn-east-3.myhuaweicloud.com/{{compList[2].bookCoverObsPath + compList[2].bookCoverObsName}}"></image>
-                    <text> {{compList[2].projectName}}</text>
-                   
-                </view>
-                <view wx:else class="mainRight2">
-                        <image mode='heightFix' class="mainRightImage2" src="/images/index/bestcomp.png"></image>
-                    </view>
-
-            </view> -->
       <van-tabs animated active="{{ active }}" bind:change="onChange">
         <van-tab class="logo-box" title="公共服务">
           <view class="logo-main" >
             <view class="logo-content" wx:for="{{compList1}}" wx:key="id" bindtap="gopriview" data-item="{{item}}">
               <view class="image-border">
-                <image class="imageStyle" src="{{item.logoPath}}" mode="" />
+                <image class="imageStyle" src="{{item.logoPath}}" mode="aspectFill" />
               </view>
               <view class="logo-text">
                 {{item.companyName}}</view>
             </view>
-
-
-
           </view>
         </van-tab>
         <van-tab class="logo-box" title="消费科技">
           <view class="logo-main">
             <view class="logo-content"   wx:for="{{compList2}}" wx:key="id" bindtap="gopriview" data-item="{{item}}">
               <view class="image-border">
-                <image class="imageStyle" src="{{item.logoPath}}" mode="" />
+                <image class="imageStyle" src="{{item.logoPath}}" mode="aspectFill" />
               </view>
               <view class="logo-text">
                 {{item.companyName}}</view>
@@ -93,7 +65,7 @@
           <view class="logo-main" >
             <view class="logo-content"  wx:for="{{compList3}}" wx:key="id" bindtap="gopriview" data-item="{{item}}">
               <view class="image-border">
-                <image class="imageStyle" src="{{item.logoPath}}" mode="" />
+                <image class="imageStyle" src="{{item.logoPath}}" mode="aspectFill" />
               </view>
               <view class="logo-text">
                 {{item.companyName}}</view>
@@ -108,7 +80,7 @@
           <view class="logo-main" >
             <view class="logo-content"  bindtap="gopriview" data-item="{{item}}" wx:for="{{compList4}}" wx:key="id">
               <view class="image-border">
-                <image class="imageStyle" src="{{item.logoPath}}" mode="" />
+                <image class="imageStyle" src="{{item.logoPath}}" mode="aspectFill" />
               </view>
               <view class="logo-text">
                 {{item.companyName}}</view>

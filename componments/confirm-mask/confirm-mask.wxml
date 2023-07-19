@@ -4,8 +4,8 @@
         <image class="arlogo" src="/images/confirm-mask/arlogo2.png"></image>
         <view class="text1">确认进入宣传册</view>
         <view class="text2">《{{borchureDetail.projectName}}》</view>
-        <view class="confirmBtn" bindtap="confirmAr">扫描画册</view>
-        <view class="arKitBtn" wx:if="{{m2.flag(borchureDetail.mediaType)}}" bindtap="arKitBtn">模型放置</view>
+        <view class="confirmBtn" bindtap="confirmAr">{{m2.flag2(borchureDetail.projectCode)}}</view>
+        <view class="arKitBtn" wx:if="{{m2.flag(borchureDetail.mediaType)}}" bindtap="arKitBtn">{{m2.flag3(borchureDetail.projectCode)}}</view>
         <view class="pointRow">
             <image src="/images/confirm-mask/point.png"></image>
             <text>建议在wifi环境下加载AR宣传册</text>
@@ -16,6 +16,16 @@
     var flag = function (mediaType) {
         return mediaType == 5 ? true :false
     }
+    var flag2 = function (projectCode) {
+        return projectCode == 369654870789541888 ? '扫描宣传册' :'扫描画册'
+    }
+    var flag3 = function (projectCode) {
+        return projectCode == 369654870789541888 ? '虚拟人' :'模型放置'
+    }
 
     module.exports.flag = flag;
+    module.exports.flag2 = flag2;
+    module.exports.flag3 = flag3;
+
+
 </wxs>

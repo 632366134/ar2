@@ -5,7 +5,7 @@
             <xr-start  class="xr"  bind:changeShow="changeShow" disable-scroll id="main-frame" width="{{renderWidth}}" height="{{renderHeight}}" style="width:{{width}}px;height:{{height}}px;" bind:assetsLoaded="handleLoaded" bind:syncPositions="handleSyncPositions" obsList="{{obsList}}" mediaList="{{mediaList}}" paramList="{{paramList}}"
             />
             <view class="selectionModel" wx:if="{{isShowScan}}">
-                <view data-index="{{index}}" catchtap="changeModel" data-item="{{item}}" wx:for="{{mediaList.length}}" wx:key="id" class="selectionModelItem">模型{{index+1}}</view>
+                <view data-index="{{index}}" catchtap="changeModel" data-item="{{item}}" wx:for="{{mediaList.length}}" wx:key="id" class="selectionModelItem">{{name}}</view>
 
             </view>
             <view class="back" wx:if="{{isShowScan}}" bindtap="reset">重置</view>

@@ -84,18 +84,20 @@ Page({
 
     let list = await API.selProjects();
     await wx.setStorageSync("list", list);
-    let collect = wx.getStorageSync("collect");
-    if (collect) {
-      let {
-        projectCode
-      } = collect;
-      collect = list.find((v) => {
-        v.projectCode === projectCode;
-      });
-      if (list) {
-        wx.setStorageSync("collect", collect);
-      }
-    }
+    let c = list.filter(v => v.projectCode == '369654870789541888')
+    let collect = c[0]
+  await wx.setStorageSync("collect",collect);
+    // if (collect) {
+    //   let {
+    //     projectCode
+    //   } = collect;
+    //   collect = list.find((v) => {
+    //     v.projectCode === projectCode;
+    //   });
+    //   if (list) {
+    //     wx.setStorageSync("collect", collect);
+    //   }
+    // }
     publicFn.LoadingOff();
     list = list.filter((element) => {
       return (
@@ -146,33 +148,17 @@ Page({
       compList2,
       compList3,
       compList4,
-
+      collect,
+      collectUrl: collect ?
+        "https://arp3.arsnowslide.com/" +
+        collect.bookCoverObsPath +
+        collect.bookCoverObsName : "/images/index/add.png",
+      isCollect: collect ? true : false,
 
     });
   },
   filterResult(v) {
     return userCodeList.indexOf(v) === -1
-  },
-  async onShow() {
-    let collect = wx.getStorageSync("collect");
-
-    this.setData({
-      collect,
-      collectUrl: collect ?
-        "https://ar-p2.obs.cn-east-3.myhuaweicloud.com/" +
-        collect.bookCoverObsPath +
-        collect.bookCoverObsName : "/images/index/add.png",
-      isCollect: collect ? true : false,
-    });
-    let flag = await wx.getStorageSync("flag");
-    if (flag) {
-      console.log("收藏已清空");
-      await wx.showToast({
-        title: "收藏已清空",
-      });
-
-      await wx.removeStorageSync("flag");
-    }
   },
   goHistroy() {
     publicFn.Loading();

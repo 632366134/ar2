@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-      "xr-marker":"/componments/xr-marker/index"
+      "xr-marker":"/componments/xr-marker/index",
+      "navigate-back":"/componments/navigateBack/navigateBack"
   },
   "navigationStyle": "custom",
   "disableScroll": true

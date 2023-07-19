@@ -1,6 +1,6 @@
 <xr-scene ar-system="modes:Plane" bind:ready="handleReady" bind:ar-ready="handleARReady">
   <xr-assets bind:loaded="handleAssetsLoaded">
-    <xr-asset-load options="ignoreError: -1" type="gltf" asset-id="anchor" src="https://ar-p2.obs.cn-east-3.myhuaweicloud.com/dian.glb" />
+    <xr-asset-load options="ignoreError: -1" type="gltf" asset-id="anchor" src="https://arp3.arsnowslide.com/dian.glb" />
   </xr-assets>
 
   <xr-light type="ambient" color="1 1 1" intensity="0.5" />

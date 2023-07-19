@@ -8,7 +8,7 @@
             <xr-node wx:for="{{mediaList1}}" wx:key="mediaCode">
                 <!-- gltf情况 -->
                 <xr-node wx:if="{{ item.parentCode ===item2.mediaCode &&item.mediaType === 5 && gltfLoaded}}" rotation="-90 0 0">
-                    <xr-gltf  visible="false"  id="mesh-gltf-{{item.id}}"   anim-autoplay node-id="mesh-gltf-{{item.id}}" model="gltf-{{item.id}}"></xr-gltf>
+                    <xr-gltf   visible="false"  id="mesh-gltf-{{item.id}}"   anim-autoplay node-id="mesh-gltf-{{item.id}}" model="gltf-{{item.id}}"></xr-gltf>
                 </xr-node>
                 <!-- image情况 -->
                 <xr-node wx:if="{{ item.parentCode ===item2.mediaCode &&item.mediaType === 3 && imageLoaded}}" position="0 0.2 0" rotation="0 0 0">

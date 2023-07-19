@@ -95,7 +95,7 @@ Component({
     },
     confirmAr() {
       publicFn.Loading();
-      let url = `https://ar-p2.obs.cn-east-3.myhuaweicloud.com/${this.properties.borchureDetail.bookCoverObsPath}${this.properties.borchureDetail.bookCoverObsName}`;
+      let url = `https://arp3.arsnowslide.com/${this.properties.borchureDetail.bookCoverObsPath}${this.properties.borchureDetail.bookCoverObsName}`;
       this.handleCamera()
         .then((res) => {
         //   wx.setStorageSync("imgUrl", url);
@@ -117,7 +117,7 @@ Component({
     },
     arKitBtn() {
       publicFn.Loading();
-      let url = `https://ar-p2.obs.cn-east-3.myhuaweicloud.com/${this.properties.borchureDetail.bookCoverObsPath}${this.properties.borchureDetail.bookCoverObsName}`;
+      let url = `https://arp3.arsnowslide.com/${this.properties.borchureDetail.bookCoverObsPath}${this.properties.borchureDetail.bookCoverObsName}`;
       this.handleCamera()
         .then((res) => {
         //   wx.setStorageSync("imgUrl", url);
