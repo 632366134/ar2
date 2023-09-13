@@ -1,99 +1,11 @@
-<!--index.wxml-->
-<view class="{{isIPhoneX ? 'container-x' :'container'}} {{isMask === true ? 'mask-blur':''}}">
-  <search-enter disable="true" bind:goSearch="goSearch"></search-enter>
-  <view class="textline">
-    <view class="welcome">Welcome to AR world !</view>
-  </view>
-  <scroll-view enhanced="true" bounces="true" enable-flex="{{true}}" class="scroll-view" scroll-x="{{true}}">
-    <view data-item="{{item}}" bindtap="gopriview" class="scroll-item" wx:for="{{list}}" wx:key="id">
-      <image mode="aspectFill" src="https://arp3.arsnowslide.com/{{item.bookCoverObsPath +item.bookCoverObsName}}" class="scrollImage"></image>
-      <text class="text">{{item.projectName}}</text>
-    </view>
-  </scroll-view>
-  <view class="collect" bindtap="goColllect" wx:if="{{!isCollect}}">
-    <image class="image" src="/images/index/logobg.png"></image>
-    <view class="addCollect">
-      <image class="imagebox" src="{{collectUrl}}"></image>
-      <text class="text2">点击收藏</text>
-
-    </view>
-  </view>
-  <view class="collect" bindtap="gopriview" wx:else data-item="{{collect}}">
-    <image class="image" src="/images/index/logobg.png"></image>
-    <view class="addCollect">
-      <image mode="aspectFill" class="collectImage" src="{{collectUrl}}"></image>
-      <text class="text">{{collect.projectName}}</text>
-    </view>
-    <!-- <view capture-catch:touchstart="goColllect" class="resetImg">
-      <image class="image" src="/images/index/reset.png"></image>
+<view>
+    <ar-main wx:if="{{mainFlag}}" disable-scroll id="main-frame" width="{{renderWidth}}" height="{{renderHeight}}" memberType4ListRaw="{{memberType4List}}" bind:changeMask="changeMask" ListRaw="{{list}}" style="width:{{width}}px;height:{{height}}px;top:{{top}}px;left:{{left}}px;display:block;"></ar-main>
+    <!-- <view class="xr-info">
+        <view class="info-text title">加载列表</view>
+        <view class="info-text">加载进度:</view>
+        <view class="info-process">
+            <view class="info-bar" style="width: {{0+'%'}}"></view>
+        </view>
     </view> -->
-  </view>
-  <view class="compList">
-
-    <view class="compListTop">
-      <image class="imageComp" mode='heightFix' src="/images/index/best2.png"></image>
-      企业榜单
-    </view>
-    <view class="compListMain">
-      <van-tabs animated active="{{ active }}" bind:change="onChange">
-        <van-tab class="logo-box" title="公共服务">
-          <view class="logo-main" >
-            <view class="logo-content" wx:for="{{compList1}}" wx:key="id" bindtap="gopriview" data-item="{{item}}">
-              <view class="image-border">
-                <image class="imageStyle" src="{{item.logoPath}}" mode="aspectFill" />
-              </view>
-              <view class="logo-text">
-                {{item.companyName}}</view>
-            </view>
-          </view>
-        </van-tab>
-        <van-tab class="logo-box" title="消费科技">
-          <view class="logo-main">
-            <view class="logo-content"   wx:for="{{compList2}}" wx:key="id" bindtap="gopriview" data-item="{{item}}">
-              <view class="image-border">
-                <image class="imageStyle" src="{{item.logoPath}}" mode="aspectFill" />
-              </view>
-              <view class="logo-text">
-                {{item.companyName}}</view>
-            </view>
-
-
-
-          </view>
-        </van-tab>
-        <van-tab class="logo-box" title="智能制造">
-          <view class="logo-main" >
-            <view class="logo-content"  wx:for="{{compList3}}" wx:key="id" bindtap="gopriview" data-item="{{item}}">
-              <view class="image-border">
-                <image class="imageStyle" src="{{item.logoPath}}" mode="aspectFill" />
-              </view>
-              <view class="logo-text">
-                {{item.companyName}}</view>
-            </view>
-            
-
-
-
-          </view>
-        </van-tab>
-        <van-tab class="logo-box" title="其他">
-          <view class="logo-main" >
-            <view class="logo-content"  bindtap="gopriview" data-item="{{item}}" wx:for="{{compList4}}" wx:key="id">
-              <view class="image-border">
-                <image class="imageStyle" src="{{item.logoPath}}" mode="aspectFill" />
-              </view>
-              <view class="logo-text">
-                {{item.companyName}}</view>
-            </view>
-            
-
-
-
-          </view>
-        </van-tab>
-      </van-tabs>
-    </view>
-  </view>
-  <tab-bar tabIndex='2'></tab-bar>
 </view>
-<confirm-mask borchureDetail="{{borchureDetail}}" bindchangeMask="changeMask" isShow="{{isMask}}"></confirm-mask>
+<confirm-mask bind:changeMainFlag="changeMainFlag" borchureDetail="{{borchureDetail}}"  isShow="{{isMask}}"></confirm-mask>

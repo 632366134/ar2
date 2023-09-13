@@ -1,10 +1,7 @@
 {
     "usingComponents": {
-        "confirm-mask": "/componments/confirm-mask/confirm-mask",
-        "tab-bar": "/componments/tabBar/tabBar",
-        "search-enter": "/componments/searchEnter/searchEnter",
-          "van-tab": "@vant/weapp/tab/index",
-          "van-tabs": "@vant/weapp/tabs/index"
+        "ar-main":"/componments/ar-main/ar-main",
+        "confirm-mask": "/componments/confirm-mask/confirm-mask"
 
       },
       "enablePullDownRefresh":false

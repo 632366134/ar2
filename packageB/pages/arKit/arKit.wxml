@@ -2,8 +2,7 @@
     <navigate-back url="index"></navigate-back>
     <view class="main">
         <view class="container2  page" data-weui-theme="{{theme}}">
-            <xr-start  class="xr"  bind:changeShow="changeShow" disable-scroll id="main-frame" width="{{renderWidth}}" height="{{renderHeight}}" style="width:{{width}}px;height:{{height}}px;" bind:assetsLoaded="handleLoaded" bind:syncPositions="handleSyncPositions" obsList="{{obsList}}" mediaList="{{mediaList}}" paramList="{{paramList}}"
-            />
+            <xr-start wx:if="{{arKitFlag}}" class="xr" bind:changeShow="changeShow" disable-scroll id="main-frame" width="{{renderWidth}}" height="{{renderHeight}}" style="width:{{width}}px;height:{{height}}px;" bind:assetsLoaded="handleLoaded" bind:syncPositions="handleSyncPositions" obsList="{{obsList}}" mediaList="{{mediaList}}" paramList="{{paramList}}" />
             <view class="selectionModel" wx:if="{{isShowScan}}">
                 <view data-index="{{index}}" catchtap="changeModel" data-item="{{item}}" wx:for="{{mediaList.length}}" wx:key="id" class="selectionModelItem">{{name}}</view>
 

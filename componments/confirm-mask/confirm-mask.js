@@ -104,10 +104,11 @@ Component({
         //     "projectCode",
         //     this.properties.borchureDetail.projectCode
         //   );
+        this.triggerEvent('changeMainFlag', {mainFlag:false}); // 传递参数true到父组件
+        this.setData({ isShow: false });
           goTo("canvasAr", {
             projectCode: this.properties.borchureDetail.projectCode,
           });
-          this.setData({ isShow: false });
           // },
           //   });
         })
@@ -126,10 +127,12 @@ Component({
         //     "projectCode",
         //     this.properties.borchureDetail.projectCode
         //   );
+        this.triggerEvent('changeMainFlag', {mainFlag:false}); // 传递参数true到父组件
+        this.setData({ isShow: false });
+
           goTo("arKit", {
             projectCode: this.properties.borchureDetail.projectCode,
           });
-          this.setData({ isShow: false });
           // },
           //   });
         })

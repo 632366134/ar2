@@ -76,7 +76,9 @@ Page({
             if (wx.offThemeChange) {
                 wx.offThemeChange();
             }
+            
             wx.removeStorageSync("projectCode");
+            this.setData({flag:false})
         },
         async onLoad({param}) {
             param = decodeURIComponent(param)

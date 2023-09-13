@@ -28,7 +28,8 @@ Page({
         mediaList2: [],
         i: 0,
         flag: false,
-        name: '虚拟人'
+        name: '虚拟人',
+        arKitFlag:false
     },
     onShareTimeline: function () {
         return {
@@ -62,6 +63,7 @@ Page({
         if (wx.offThemeChange) {
             wx.offThemeChange();
         }
+        this.setData({arKitFlag:false})
         wx.removeStorageSync("projectCode");
     },
     async onLoad({
@@ -106,7 +108,8 @@ Page({
             renderWidth: width * dpi,
             renderHeight: height * dpi,
             mediaList,
-            paramList
+            paramList,
+            arKitFlag:true
 
         });
         this.obsList = obsList

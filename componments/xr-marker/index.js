@@ -154,7 +154,7 @@ Component({
                 this.data.imageIdList.map((id) => {
                     // 释放加载过的资源
                     scene.assets.releaseAsset('texture', `image-${id}`);
-                    scene.assets.releaseAsset('material', `image-mat${id}`);
+                    scene.assets.releaseAsset('material', `image-mat-${id}`);
                     this.setData({
                         imageIdList: []
                     });
@@ -227,7 +227,7 @@ Component({
         }) {
             const xrScene = this.scene = detail.value;
             console.log('xr-scene', xrScene);
-      const xrFrameSystem=this.xrFrameSystem = wx.getXrFrameSystem()
+            const xrFrameSystem = this.xrFrameSystem = wx.getXrFrameSystem()
 
 
             // 加载场景资源
@@ -534,11 +534,11 @@ Component({
                                     const list4 = this.data.paramList1.filter(d => v.mediaCode === d.mediaCode)
                                     console.log(`mesh-gltf-${v.id}`)
                                     const gltf = this.scene.getNodeById(`mesh-gltf-${v.id}`)
-                                       // 获取改动元素
-      this.gltfItemTRS = this.scene.getElementById(`mesh-gltf-${v.id}`).getComponent(this.xrFrameSystem.Transform)
+                                    // 获取改动元素
+                                    this.gltfItemTRS = this.scene.getElementById(`mesh-gltf-${v.id}`).getComponent(this.xrFrameSystem.Transform)
 
-      // 开启旋转缩放逻辑
-      this.scene.event.addOnce('touchstart', this.handleTouchStart)
+                                    // 开启旋转缩放逻辑
+                                    this.scene.event.addOnce('touchstart', this.handleTouchStart)
                                     console.log(gltf, list4)
                                     console.log([list4[0].modelParamInfo[0]])
 

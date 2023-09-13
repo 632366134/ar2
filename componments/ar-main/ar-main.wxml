@@ -1,0 +1,69 @@
+<xr-scene ar-system="modes:threeDof" id="xr-scene" bind:ready="handleReady">
+    <xr-assets bind:progress="handleAssetsProgress" bind:loaded="handleAssetsLoaded">
+    </xr-assets>
+    <xr-node>
+
+        <!-- glTF -->
+        <!-- <xr-node wx:if="{{gltfLoaded}}">
+      <xr-node
+        wx:for="{{gltfIdList}}" wx:for-item="gltfId"
+        wx:key="gltfId"
+      >
+        <xr-gltf
+          wx:if="{{gltfId == 0}}"
+          position="-1 -0.46 -1" rotation="0 0 0"
+          scale="0.6 0.6 0.6"
+          model="gltf-{{gltfId}}"
+          cast-shadow
+        ></xr-gltf>
+        <xr-gltf
+          wx:if="{{gltfId == 1}}"
+          position="1 -0.98 -1" rotation="0 0 0"
+          scale="0.015 0.015 0.015"
+          model="gltf-{{gltfId}}"
+          cast-shadow
+        ></xr-gltf>
+      </xr-node>
+    </xr-node> -->
+        <!-- Image -->
+        <xr-node wx:if="{{imageLoaded}}">
+            <xr-node wx:for="{{memberType4ListRaw1}}" wx:key="index" id="{{item.id}}">
+                <xr-text node-id="text-name" position="-0.2 1 -0.98" scale="0.1 0.1 0.1" value="{{item.projectName}}"></xr-text>
+                <xr-mesh cube-shape="autoFit:true" data-item="{{item}}"  bind:touch-shape="goPriview" shape-gizmo position="0 1 -1" scale="0.5 0.5 0.5" rotation="90 0 0" geometry="plane" material="texture-mat-{{item.id}}" cast-shadow states="cullOn: false, alphaMode: BLEND,renderQueue: 2501" />
+
+            </xr-node>
+        </xr-node>
+        <!-- Video -->
+        <!-- <xr-node wx:if="{{videoLoaded}}">
+      <xr-node
+        wx:for="{{videoIdList}}" wx:for-item="videoId"
+        wx:key="videoId"
+      >
+      <xr-mesh
+        wx:if="{{videoId === 4}}"
+        node-id="mesh-cube" position="0 -0.5 1" scale="0.8 1.4 0.8"
+        geometry="cube" material="video-mat-{{videoId}}"
+        cast-shadow
+      />
+      <xr-mesh
+        wx:if="{{videoId === 5}}"
+        node-id="mesh-cube" position="-1.5 -0.6 1" scale="1.2 0.8 0.8"
+        geometry="cube" material="video-mat-{{videoId}}"
+        cast-shadow
+      />
+      <xr-mesh
+        wx:if="{{videoId === 6}}"
+        node-id="mesh-cube" position="1.5 -0.6 1" scale="1.2 0.8 0.8"
+        geometry="cube" material="video-mat-{{videoId}}"
+        cast-shadow
+      />
+      </xr-node>
+    </xr-node> -->
+
+        <xr-camera id="camera" node-id="camera" clear-color="0.925 0.925 0.925 1" background="ar" near="0.1" far="2000" is-ar-camera></xr-camera>
+    </xr-node>
+    <xr-node node-id="lights">
+        <xr-light type="ambient" color="1 1 1" intensity="1" />
+        <xr-light type="directional" rotation="40 170 0" color="1 1 1" intensity="3" cast-shadow />
+    </xr-node>
+</xr-scene>
